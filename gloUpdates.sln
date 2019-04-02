@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gloUpdates", "gloUpdates.csproj", "{8546EA41-8669-4A18-B53B-F35CD0427F7C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "gloInstallerCommandParametrs", "..\..\..\..\gloAPPS\InstallerCommandParametrs\gloInstallerCommandParametrs.vbproj", "{48F80F05-8969-45BE-A22D-474B72C7FBB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gloGlobal", "..\..\..\..\gloCommon\gloGlobal\gloGlobal.csproj", "{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gloAuditTrail", "..\..\..\..\gloCommon\gloAuditTrail\gloAuditTrail.csproj", "{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gloDatabaseLayer", "..\..\..\..\gloCommon\gloDatabaseLayer\gloDatabaseLayer.csproj", "{6D67B632-66D0-4EDC-9943-B6488A6098D3}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://glosvr03:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\..\\..\\gloAPPS\\InstallerCommandParametrs\\gloInstallerCommandParametrs.vbproj
+		SccProjectName1 = ../../../../gloAPPS/InstallerCommandParametrs
+		SccLocalPath1 = ..\\..\\..\\..\\gloAPPS\\InstallerCommandParametrs
+		SccProjectUniqueName2 = gloUpdates.csproj
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = ..\\..\\..\\..\\gloCommon\\gloGlobal\\gloGlobal.csproj
+		SccProjectName3 = ../../../../gloCommon/gloGlobal
+		SccLocalPath3 = ..\\..\\..\\..\\gloCommon\\gloGlobal
+		SccProjectUniqueName4 = ..\\..\\..\\..\\gloCommon\\gloAuditTrail\\gloAuditTrail.csproj
+		SccProjectName4 = ../../../../gloCommon/gloAuditTrail
+		SccLocalPath4 = ..\\..\\..\\..\\gloCommon\\gloAuditTrail
+		SccProjectUniqueName5 = ..\\..\\..\\..\\gloCommon\\gloDatabaseLayer\\gloDatabaseLayer.csproj
+		SccProjectName5 = ../../../../gloCommon/gloDatabaseLayer
+		SccLocalPath5 = ..\\..\\..\\..\\gloCommon\\gloDatabaseLayer
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8546EA41-8669-4A18-B53B-F35CD0427F7C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{8546EA41-8669-4A18-B53B-F35CD0427F7C}.Debug|x86.ActiveCfg = Debug|x86
+		{8546EA41-8669-4A18-B53B-F35CD0427F7C}.Debug|x86.Build.0 = Debug|x86
+		{8546EA41-8669-4A18-B53B-F35CD0427F7C}.Release|Any CPU.ActiveCfg = Release|x86
+		{8546EA41-8669-4A18-B53B-F35CD0427F7C}.Release|x86.ActiveCfg = Release|x86
+		{8546EA41-8669-4A18-B53B-F35CD0427F7C}.Release|x86.Build.0 = Release|x86
+		{48F80F05-8969-45BE-A22D-474B72C7FBB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F80F05-8969-45BE-A22D-474B72C7FBB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F80F05-8969-45BE-A22D-474B72C7FBB3}.Debug|x86.ActiveCfg = Debug|x86
+		{48F80F05-8969-45BE-A22D-474B72C7FBB3}.Debug|x86.Build.0 = Debug|x86
+		{48F80F05-8969-45BE-A22D-474B72C7FBB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F80F05-8969-45BE-A22D-474B72C7FBB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F80F05-8969-45BE-A22D-474B72C7FBB3}.Release|x86.ActiveCfg = Release|x86
+		{48F80F05-8969-45BE-A22D-474B72C7FBB3}.Release|x86.Build.0 = Release|x86
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Debug|x86.ActiveCfg = Debug|x86
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Debug|x86.Build.0 = Debug|x86
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Release|x86.ActiveCfg = Release|x86
+		{1418D0CB-0BAA-4777-90F8-9BB0E4BB9372}.Release|x86.Build.0 = Release|x86
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Debug|x86.ActiveCfg = Debug|x86
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Debug|x86.Build.0 = Debug|x86
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Release|x86.ActiveCfg = Release|x86
+		{3F4FA298-6C2B-4635-94A0-B0FB20F9AAAF}.Release|x86.Build.0 = Release|x86
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Debug|x86.ActiveCfg = Debug|x86
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Debug|x86.Build.0 = Debug|x86
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Release|x86.ActiveCfg = Release|x86
+		{6D67B632-66D0-4EDC-9943-B6488A6098D3}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

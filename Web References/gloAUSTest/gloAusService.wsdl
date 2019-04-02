@@ -1,0 +1,1145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://ophit.net/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://ophit.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://ophit.net/">
+      <s:element name="DownloadProductUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestXmlStream" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadProductUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadProductUpdateResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadProductUpdate_70v1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestXmlStream" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadProductUpdate_70v1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadProductUpdate_70v1Result" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInstalogRequests">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClinicId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInstalogRequestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInstalogRequestsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetInstaLogStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientIdentifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInstaLogStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetInstaLogStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecieveLogFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileDetails" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="cntFromRequest" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="blnIsGeneral" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecieveLogFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RecieveLogFileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFtpCredentials">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFtpCredentialsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFtpCredentialsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFtpPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFtpPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFtpPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFtpDownloadPath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFtpDownloadPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFtpDownloadPathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertUpdateDownloadDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClientAusId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsUpdateDownloadStatus" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="nUpdateDownloadDetailId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsUpdateInstallStatus" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMachineName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertUpdateDownloadDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertUpdateDownloadDetailsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInstalledStatusDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClientAusId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsUpdateInstallStatus" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMachineName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProductVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProductPreviousVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDBName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInstalledStatusDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateInstalledStatusDetailsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogUpdateDownloadDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClientAusId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsUpdateDownloadStatus" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="nUpdateDownloadDetailId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsUpdateInstallStatus" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMachineName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nProductId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProductVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProductPreviousVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDBName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogUpdateDownloadDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogUpdateDownloadDetailsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogUpdateDownloadDetailsV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClientAusId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsUpdateDownloadStatus" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="nUpdateDownloadDetailId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsUpdateInstallStatus" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMachineName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nProductId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProductVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProductPreviousVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDBName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsDbReplication" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogUpdateDownloadDetailsV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogUpdateDownloadDetailsV2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogUpdateInstallDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClientAusId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="updateId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsUpdateInstallStatus" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMachineName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nProductId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProductVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProductPreviousVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDBName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogUpdateInstallDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogUpdateInstallDetailsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckAusIDExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClientAusId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckAusIDExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckAusIDExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogUpdateInfoForManualProcess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClientAusId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nProductId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProductVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMachineName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPreviouVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDBName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogUpdateInfoForManualProcessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogUpdateInfoForManualProcessResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogUpdateInfoForManualProcessV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClientAusId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nProductId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProductVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMachineName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPreviouVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDBName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsDbReplication" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogUpdateInfoForManualProcessV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogUpdateInfoForManualProcessV2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFtpCredentialsForDrugAndICD9CPT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFtpCredentialsForDrugAndICD9CPTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFtpCredentialsForDrugAndICD9CPTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nProductCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strProductVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetProductIDResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFtpDownloadPathForDrugAndICD9CPT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strFlag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDownloadType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFtpDownloadPathForDrugAndICD9CPTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFtpDownloadPathForDrugAndICD9CPTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckIsAssestDataRequestedForAusId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClientAusId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckIsAssestDataRequestedForAusIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckIsAssestDataRequestedForAusIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadAssestDataRequestDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClientAusId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadAssestDataRequestDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadAssestDataRequestDetailsResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendAssestRequestedData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseXmlStream" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendAssestRequestedDataResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DownloadServicesDataRequestDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClientAusId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadServicesDataRequestDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadServicesDataRequestDetailsResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendServicesRequestedData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseXmlStream" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendServicesRequestedDataResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DownloadProductUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadProductUpdate" />
+  </wsdl:message>
+  <wsdl:message name="DownloadProductUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadProductUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadProductUpdate_70v1SoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadProductUpdate_70v1" />
+  </wsdl:message>
+  <wsdl:message name="DownloadProductUpdate_70v1SoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadProductUpdate_70v1Response" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInstalogRequestsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInstalogRequests" />
+  </wsdl:message>
+  <wsdl:message name="GetInstalogRequestsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInstalogRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInstaLogStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInstaLogStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetInstaLogStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInstaLogStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecieveLogFileSoapIn">
+    <wsdl:part name="parameters" element="tns:RecieveLogFile" />
+  </wsdl:message>
+  <wsdl:message name="RecieveLogFileSoapOut">
+    <wsdl:part name="parameters" element="tns:RecieveLogFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFtpCredentialsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFtpCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetFtpCredentialsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFtpCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFtpPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFtpPassword" />
+  </wsdl:message>
+  <wsdl:message name="GetFtpPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFtpPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFtpDownloadPathSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFtpDownloadPath" />
+  </wsdl:message>
+  <wsdl:message name="GetFtpDownloadPathSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFtpDownloadPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertUpdateDownloadDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertUpdateDownloadDetails" />
+  </wsdl:message>
+  <wsdl:message name="InsertUpdateDownloadDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertUpdateDownloadDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInstalledStatusDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateInstalledStatusDetails" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInstalledStatusDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateInstalledStatusDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogUpdateDownloadDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:LogUpdateDownloadDetails" />
+  </wsdl:message>
+  <wsdl:message name="LogUpdateDownloadDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:LogUpdateDownloadDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogUpdateDownloadDetailsV2SoapIn">
+    <wsdl:part name="parameters" element="tns:LogUpdateDownloadDetailsV2" />
+  </wsdl:message>
+  <wsdl:message name="LogUpdateDownloadDetailsV2SoapOut">
+    <wsdl:part name="parameters" element="tns:LogUpdateDownloadDetailsV2Response" />
+  </wsdl:message>
+  <wsdl:message name="LogUpdateInstallDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:LogUpdateInstallDetails" />
+  </wsdl:message>
+  <wsdl:message name="LogUpdateInstallDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:LogUpdateInstallDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckAusIDExistSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckAusIDExist" />
+  </wsdl:message>
+  <wsdl:message name="CheckAusIDExistSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckAusIDExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogUpdateInfoForManualProcessSoapIn">
+    <wsdl:part name="parameters" element="tns:LogUpdateInfoForManualProcess" />
+  </wsdl:message>
+  <wsdl:message name="LogUpdateInfoForManualProcessSoapOut">
+    <wsdl:part name="parameters" element="tns:LogUpdateInfoForManualProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogUpdateInfoForManualProcessV2SoapIn">
+    <wsdl:part name="parameters" element="tns:LogUpdateInfoForManualProcessV2" />
+  </wsdl:message>
+  <wsdl:message name="LogUpdateInfoForManualProcessV2SoapOut">
+    <wsdl:part name="parameters" element="tns:LogUpdateInfoForManualProcessV2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetFtpCredentialsForDrugAndICD9CPTSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFtpCredentialsForDrugAndICD9CPT" />
+  </wsdl:message>
+  <wsdl:message name="GetFtpCredentialsForDrugAndICD9CPTSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFtpCredentialsForDrugAndICD9CPTResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductID" />
+  </wsdl:message>
+  <wsdl:message name="GetProductIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFtpDownloadPathForDrugAndICD9CPTSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFtpDownloadPathForDrugAndICD9CPT" />
+  </wsdl:message>
+  <wsdl:message name="GetFtpDownloadPathForDrugAndICD9CPTSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFtpDownloadPathForDrugAndICD9CPTResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckIsAssestDataRequestedForAusIdSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckIsAssestDataRequestedForAusId" />
+  </wsdl:message>
+  <wsdl:message name="CheckIsAssestDataRequestedForAusIdSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckIsAssestDataRequestedForAusIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadAssestDataRequestDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadAssestDataRequestDetails" />
+  </wsdl:message>
+  <wsdl:message name="DownloadAssestDataRequestDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadAssestDataRequestDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendAssestRequestedDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SendAssestRequestedData" />
+  </wsdl:message>
+  <wsdl:message name="SendAssestRequestedDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SendAssestRequestedDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadServicesDataRequestDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadServicesDataRequestDetails" />
+  </wsdl:message>
+  <wsdl:message name="DownloadServicesDataRequestDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadServicesDataRequestDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendServicesRequestedDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SendServicesRequestedData" />
+  </wsdl:message>
+  <wsdl:message name="SendServicesRequestedDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SendServicesRequestedDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="gloAUSServiceSoap">
+    <wsdl:operation name="DownloadProductUpdate">
+      <wsdl:input message="tns:DownloadProductUpdateSoapIn" />
+      <wsdl:output message="tns:DownloadProductUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadProductUpdate_70v1">
+      <wsdl:input message="tns:DownloadProductUpdate_70v1SoapIn" />
+      <wsdl:output message="tns:DownloadProductUpdate_70v1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstalogRequests">
+      <wsdl:input message="tns:GetInstalogRequestsSoapIn" />
+      <wsdl:output message="tns:GetInstalogRequestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstaLogStatus">
+      <wsdl:input message="tns:GetInstaLogStatusSoapIn" />
+      <wsdl:output message="tns:GetInstaLogStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecieveLogFile">
+      <wsdl:input message="tns:RecieveLogFileSoapIn" />
+      <wsdl:output message="tns:RecieveLogFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpCredentials">
+      <wsdl:input message="tns:GetFtpCredentialsSoapIn" />
+      <wsdl:output message="tns:GetFtpCredentialsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpPassword">
+      <wsdl:input message="tns:GetFtpPasswordSoapIn" />
+      <wsdl:output message="tns:GetFtpPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpDownloadPath">
+      <wsdl:input message="tns:GetFtpDownloadPathSoapIn" />
+      <wsdl:output message="tns:GetFtpDownloadPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateDownloadDetails">
+      <wsdl:input message="tns:InsertUpdateDownloadDetailsSoapIn" />
+      <wsdl:output message="tns:InsertUpdateDownloadDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInstalledStatusDetails">
+      <wsdl:input message="tns:UpdateInstalledStatusDetailsSoapIn" />
+      <wsdl:output message="tns:UpdateInstalledStatusDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateDownloadDetails">
+      <wsdl:input message="tns:LogUpdateDownloadDetailsSoapIn" />
+      <wsdl:output message="tns:LogUpdateDownloadDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateDownloadDetailsV2">
+      <wsdl:input message="tns:LogUpdateDownloadDetailsV2SoapIn" />
+      <wsdl:output message="tns:LogUpdateDownloadDetailsV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateInstallDetails">
+      <wsdl:input message="tns:LogUpdateInstallDetailsSoapIn" />
+      <wsdl:output message="tns:LogUpdateInstallDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAusIDExist">
+      <wsdl:input message="tns:CheckAusIDExistSoapIn" />
+      <wsdl:output message="tns:CheckAusIDExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateInfoForManualProcess">
+      <wsdl:input message="tns:LogUpdateInfoForManualProcessSoapIn" />
+      <wsdl:output message="tns:LogUpdateInfoForManualProcessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateInfoForManualProcessV2">
+      <wsdl:input message="tns:LogUpdateInfoForManualProcessV2SoapIn" />
+      <wsdl:output message="tns:LogUpdateInfoForManualProcessV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpCredentialsForDrugAndICD9CPT">
+      <wsdl:input message="tns:GetFtpCredentialsForDrugAndICD9CPTSoapIn" />
+      <wsdl:output message="tns:GetFtpCredentialsForDrugAndICD9CPTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductID">
+      <wsdl:input message="tns:GetProductIDSoapIn" />
+      <wsdl:output message="tns:GetProductIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpDownloadPathForDrugAndICD9CPT">
+      <wsdl:input message="tns:GetFtpDownloadPathForDrugAndICD9CPTSoapIn" />
+      <wsdl:output message="tns:GetFtpDownloadPathForDrugAndICD9CPTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckIsAssestDataRequestedForAusId">
+      <wsdl:input message="tns:CheckIsAssestDataRequestedForAusIdSoapIn" />
+      <wsdl:output message="tns:CheckIsAssestDataRequestedForAusIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAssestDataRequestDetails">
+      <wsdl:input message="tns:DownloadAssestDataRequestDetailsSoapIn" />
+      <wsdl:output message="tns:DownloadAssestDataRequestDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAssestRequestedData">
+      <wsdl:input message="tns:SendAssestRequestedDataSoapIn" />
+      <wsdl:output message="tns:SendAssestRequestedDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadServicesDataRequestDetails">
+      <wsdl:input message="tns:DownloadServicesDataRequestDetailsSoapIn" />
+      <wsdl:output message="tns:DownloadServicesDataRequestDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendServicesRequestedData">
+      <wsdl:input message="tns:SendServicesRequestedDataSoapIn" />
+      <wsdl:output message="tns:SendServicesRequestedDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="gloAUSServiceSoap" type="tns:gloAUSServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DownloadProductUpdate">
+      <soap:operation soapAction="https://ophit.net/DownloadProductUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadProductUpdate_70v1">
+      <soap:operation soapAction="https://ophit.net/DownloadProductUpdate_70v1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="https://ophit.net/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstalogRequests">
+      <soap:operation soapAction="https://ophit.net/GetInstalogRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstaLogStatus">
+      <soap:operation soapAction="https://ophit.net/GetInstaLogStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecieveLogFile">
+      <soap:operation soapAction="https://ophit.net/RecieveLogFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpCredentials">
+      <soap:operation soapAction="https://ophit.net/GetFtpCredentials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpPassword">
+      <soap:operation soapAction="https://ophit.net/GetFtpPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpDownloadPath">
+      <soap:operation soapAction="https://ophit.net/GetFtpDownloadPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateDownloadDetails">
+      <soap:operation soapAction="https://ophit.net/InsertUpdateDownloadDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInstalledStatusDetails">
+      <soap:operation soapAction="https://ophit.net/UpdateInstalledStatusDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateDownloadDetails">
+      <soap:operation soapAction="https://ophit.net/LogUpdateDownloadDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateDownloadDetailsV2">
+      <soap:operation soapAction="https://ophit.net/LogUpdateDownloadDetailsV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateInstallDetails">
+      <soap:operation soapAction="https://ophit.net/LogUpdateInstallDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAusIDExist">
+      <soap:operation soapAction="https://ophit.net/CheckAusIDExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateInfoForManualProcess">
+      <soap:operation soapAction="https://ophit.net/LogUpdateInfoForManualProcess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateInfoForManualProcessV2">
+      <soap:operation soapAction="https://ophit.net/LogUpdateInfoForManualProcessV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpCredentialsForDrugAndICD9CPT">
+      <soap:operation soapAction="https://ophit.net/GetFtpCredentialsForDrugAndICD9CPT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductID">
+      <soap:operation soapAction="https://ophit.net/GetProductID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpDownloadPathForDrugAndICD9CPT">
+      <soap:operation soapAction="https://ophit.net/GetFtpDownloadPathForDrugAndICD9CPT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIsAssestDataRequestedForAusId">
+      <soap:operation soapAction="https://ophit.net/CheckIsAssestDataRequestedForAusId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAssestDataRequestDetails">
+      <soap:operation soapAction="https://ophit.net/DownloadAssestDataRequestDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAssestRequestedData">
+      <soap:operation soapAction="https://ophit.net/SendAssestRequestedData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadServicesDataRequestDetails">
+      <soap:operation soapAction="https://ophit.net/DownloadServicesDataRequestDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendServicesRequestedData">
+      <soap:operation soapAction="https://ophit.net/SendServicesRequestedData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="gloAUSServiceSoap12" type="tns:gloAUSServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DownloadProductUpdate">
+      <soap12:operation soapAction="https://ophit.net/DownloadProductUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadProductUpdate_70v1">
+      <soap12:operation soapAction="https://ophit.net/DownloadProductUpdate_70v1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="https://ophit.net/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstalogRequests">
+      <soap12:operation soapAction="https://ophit.net/GetInstalogRequests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstaLogStatus">
+      <soap12:operation soapAction="https://ophit.net/GetInstaLogStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecieveLogFile">
+      <soap12:operation soapAction="https://ophit.net/RecieveLogFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpCredentials">
+      <soap12:operation soapAction="https://ophit.net/GetFtpCredentials" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpPassword">
+      <soap12:operation soapAction="https://ophit.net/GetFtpPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpDownloadPath">
+      <soap12:operation soapAction="https://ophit.net/GetFtpDownloadPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateDownloadDetails">
+      <soap12:operation soapAction="https://ophit.net/InsertUpdateDownloadDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInstalledStatusDetails">
+      <soap12:operation soapAction="https://ophit.net/UpdateInstalledStatusDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateDownloadDetails">
+      <soap12:operation soapAction="https://ophit.net/LogUpdateDownloadDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateDownloadDetailsV2">
+      <soap12:operation soapAction="https://ophit.net/LogUpdateDownloadDetailsV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateInstallDetails">
+      <soap12:operation soapAction="https://ophit.net/LogUpdateInstallDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAusIDExist">
+      <soap12:operation soapAction="https://ophit.net/CheckAusIDExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateInfoForManualProcess">
+      <soap12:operation soapAction="https://ophit.net/LogUpdateInfoForManualProcess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogUpdateInfoForManualProcessV2">
+      <soap12:operation soapAction="https://ophit.net/LogUpdateInfoForManualProcessV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpCredentialsForDrugAndICD9CPT">
+      <soap12:operation soapAction="https://ophit.net/GetFtpCredentialsForDrugAndICD9CPT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductID">
+      <soap12:operation soapAction="https://ophit.net/GetProductID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFtpDownloadPathForDrugAndICD9CPT">
+      <soap12:operation soapAction="https://ophit.net/GetFtpDownloadPathForDrugAndICD9CPT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIsAssestDataRequestedForAusId">
+      <soap12:operation soapAction="https://ophit.net/CheckIsAssestDataRequestedForAusId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAssestDataRequestDetails">
+      <soap12:operation soapAction="https://ophit.net/DownloadAssestDataRequestDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAssestRequestedData">
+      <soap12:operation soapAction="https://ophit.net/SendAssestRequestedData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadServicesDataRequestDetails">
+      <soap12:operation soapAction="https://ophit.net/DownloadServicesDataRequestDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendServicesRequestedData">
+      <soap12:operation soapAction="https://ophit.net/SendServicesRequestedData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="gloAUSService">
+    <wsdl:port name="gloAUSServiceSoap" binding="tns:gloAUSServiceSoap">
+      <soap:address location="https://gloproject.com/Staging/gloAus70/gloAusService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="gloAUSServiceSoap12" binding="tns:gloAUSServiceSoap12">
+      <soap12:address location="https://gloproject.com/Staging/gloAus70/gloAusService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
